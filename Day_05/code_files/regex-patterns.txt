@@ -1,0 +1,89 @@
+    abc…	   Letters
+ 
+	123…	   Digits
+
+	\d	        Any Digit
+
+	\D	        Any Non-digit character
+
+	.	        Any Character
+
+	\.	        Period
+
+	[abc]	    matches characters in bracket
+
+	[^abc]	     matches chars NOT IN bracket
+
+	[a-z]	     Characters a to z
+
+	[0-9]	     Numbers 0 to 9
+
+	\w	         Any Alphanumeric character
+
+	\W	        Any Non-alphanumeric character
+
+	{m}	        m Repetitions
+
+	{m,n}	    m to n Repetitions
+
+	*	         Zero or more repetitions
+
+	+	         One or more repetitions
+
+	?	        Zero or one
+
+	\s	        Any Whitespace
+
+	\S	        Any Non-whitespace character
+
+	^…$	        Starts and ends
+
+	
+	(abc|def)	Matches abc or def
+
+
+	Sample Regex
+
+[a-c]+\.{4}[d-f]+
+
+
+	^[a-z0-9_-]{3,16}$
+
+Starts and ends with 3-16 numbers, letters, underscores or hyphens
+Any lowercase letter (a-z), number (0-9), an underscore, or a hyphen.
+At least 3 to 16 characters.
+Matches E.g. my-us3r_n4m3 but not th1s1s-wayt00_l0ngt0beausername
+
+
+^[a-z0-9_-]{6,18}$
+
+Starts and ends with 6-18 letters, numbers, underscores, hyphens.
+Matches e.g. myp4ssw0rd but not mypa$$w0rd
+
+
+^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$
+
+String that matches: john@doe.com
+String that doesn't match: john@doe.something (TLD is too long)
+
+//Advanced Regular Expressions
+
+
+LOOKAHEAD and LOOKBEHIND Assertions (Important) [Lookaround]
+https://www.rexegg.com/regex-lookarounds.html
+
+https://www.regular-expressions.info/lookaround.html
+
+http://thelazylog.com/advanced-regex-power-of-lookahead-and-lookbehind/
+\d+(?=[A-Za-z])
+http://rubular.com/
+
+
++9999999999
+999999-999
+99999x9999
+
+For above three numbers you can use
+(\+[8-9]{1}[0-9]{9})
+
+^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$

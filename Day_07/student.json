@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue May 14 16:00:52 2019
+
+@author: Administrator
+"""
+[
+{
+    "First Name" : "Digvijay",
+    "Last Name" : "Singh",
+    "Photo" : "http://www.google.com/pic1.jpg",
+    "Department" : "CSE",
+    "Father Name" : "Rajendra Singh",
+    "Email-ID" : "ds93755@gmail.com"
+},
+{
+    "First Name" : "Harshit",
+    "Last Name" : "Goswami",
+    "Photo" : "http://www.google.com/pic2.jpg",
+    "Department" : "CSE",
+    "Father Name" : "Buddhi Prakash Goswami",
+    "Email-ID" : "hrshtgswm@gmail.com"
+}
+]

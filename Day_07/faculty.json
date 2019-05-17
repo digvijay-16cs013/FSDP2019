@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue May 14 16:14:37 2019
+
+@author: Administrator
+"""
+
+[
+{
+    "First Name" : "Yogendra",
+    "Last Name" : "Singh",
+    "Photo" : "http://www.google.com/faculty1.jpg",
+    "Department" : "CSE",
+    "Research Areas" : ["ML", "DL"],
+    "Contact Details" : {
+        "Phone Number" : +912783227380,
+        "Email ID" : ys@gmail.com
+    }
+},
+{
+    "First Name" : "Sylvester",
+    "Last Name" : "Fernendez",
+    "Photo" : "http://www.google.com/faculty2.jpg",
+    "Department" : "CSE",
+    "Research Areas" : ["ML", "DL"],
+    "Contact Details" : {
+        "Phone Number" : +912783227381,
+        "Email ID" : sf@gmail.com
+    }
+}
+]
