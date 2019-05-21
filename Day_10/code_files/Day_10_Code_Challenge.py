@@ -23,8 +23,6 @@ It must take names and other required information from the user.
 
 """
 
-
-
 """
 Code Challenge 3
 
@@ -34,7 +32,10 @@ Have some pictures you want copyright protected? Add your own logo or text light
 across the background so that no one can simply steal your graphics off your site. 
 Make a program that will add this watermark to the picture.
 
+"""
 
+
+"""
 
 Code Challenge 4
 GIF Creator
@@ -43,7 +44,10 @@ A program that puts together multiple images (PNGs, JPGs, TIFFs) to make a smoot
 GIF that can be exported. Make the program convert small video files to GIFs as 
 well.
 
+"""
 
+
+"""
 
 Code Challenge 5
 
@@ -56,9 +60,3 @@ together for you each day. The code should share the Horoscope on Tweeter accoun
 
 
 """
-
-# Challenge no. 1
-from PIL import Image, ImageDraw, ImageFont
-img = Image.new('RGB', (842, 595), (178, 190, 195))
-draw = ImageDraw.Draw(img)
-font = ImageFont.truetype('')
