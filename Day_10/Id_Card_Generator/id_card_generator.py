@@ -37,10 +37,10 @@ for stu in range(num_of_students):
     draw.text((85, 143), company_name, fill = color_c, font = font_c)
     
     # to get the Name of student
-    name = input('Enter Student {} Name : '.format(stu + 1)).upper()
+    name = input('Enter Student {} full Name : '.format(stu + 1)).upper()
     
     # font for Student name 
-    font_n = ImageFont.truetype('Roboto-Regular.ttf', size = 21)
+    font_n = ImageFont.truetype('Roboto-Regular.ttf', size = 18)
     
     # color for Student Name
     color_c = 'rgb(1, 2, 3)'
@@ -153,7 +153,7 @@ for stu in range(num_of_students):
     photo.thumbnail((128, 128), Image.ANTIALIAS)
     
     # pasting Student's Photogrpah on id_card
-    background.paste(photo, (110, 190))
+    background.paste(photo, (112, 192))
     
     # to show the id_card
     background.show()
