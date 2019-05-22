@@ -42,30 +42,6 @@ Code Challenge
       combination with standard bracket notation to select a single column of
       a DataFrame
 """
-import pandas as pd
-
-titanic_data = pd.read_csv('training_titanic.csv')
-s_and_d = titanic_data['Survived'].value_counts()
-s_and_d_per = titanic_data['Survived'].value_counts(normalize = True)
-survived = s_and_d[1]
-died = s_and_d[0]
-survived_per =  s_and_d_per[1]
-died_per =  s_and_d_per[0]
-
-male_survived = titanic_data['Survived'][titanic_data['Sex'] == 'male'].value_counts(normalize = True)[1]
-male_died = titanic_data['Survived'][titanic_data['Sex'] == 'male'].value_counts(normalize = True)[0]
-
-female_survived = titanic_data['Survived'][titanic_data['Sex'] == 'female'].value_counts(normalize = True)[1]
-female_died = titanic_data['Survived'][titanic_data['Sex'] == 'female'].value_counts(normalize = True)[0]
-
-titanic_data['Age'] = titanic_data['Age'].fillna(titanic_data['Age'].mean())
-titanic_data['Child'] = titanic_data['Age'].map(lambda x : 1 if x < 18 else 0)
-
-
-sur_rate = titanic_data['Child'][titanic_data['Survived'] == 1].value_counts(normalize = True)
-child_sur = sur_rate[0]
-older_sur = sur_rate[1]
-
 
 """
 Code Challenge
@@ -81,19 +57,6 @@ Code Challenge
       2. Get the values from Price column into a numpy.ndarray
       3. Calculate the Minimum Price, Maximum Price, Average Price and Standard Deviation of Price
 """
-import pandas as pd, numpy as np
-
-auto_data = pd.read_csv('Automobile.csv')
-
-# replacing NaN values
-auto_data['price'] = auto_data['price'].fillna(auto_data['price'].median())
-
-price = np.array(auto_data['price'])
-
-minimum = price.min()
-maximum = price.max()
-average = price.mean()
-std_deviation = price.std()
 
 """
 Code Challenge
@@ -153,19 +116,3 @@ Code Challenge
     Read the telecom_churn.csv file and perform the following task :
     
 """
-
-import pandas as pd, matplotlib.pyplot as plt
-
-telecom_data = pd.read_csv('Telecom_churn.csv')
-
-churn_prediction = telecom_data['churn'][(telecom_data['voice mail plan'] == 'yes') & (telecom_data['international plan'] == 'yes')].value_counts(normalize = True)[True]
-
-intl_call_charge_for_churn = telecom_data['total intl charge'][telecom_data['churn'] == True].sum()
-intl_call_charge_for_not_churn = telecom_data['total intl charge'][telecom_data['churn'] == False].sum()
-plt.bar(['Churn', 'Not Churn'], [intl_call_charge_for_churn, intl_call_charge_for_not_churn], width = 0.5, align = 'center')
-plt.title('International Call Charge')
-
-
-state = telecom_data['state'][(telecom_data['churn'] == True) & (telecom_data['total night minutes'] == telecom_data['total night minutes'].max())]
-
-
