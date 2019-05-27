@@ -421,7 +421,6 @@ print (x.itemsize)
 # The default dtype is float64.
 
 x = np.zeros((3, ))
-print (x)
 print (x.ndim)
 print (x.shape)
 print (x.dtype)
@@ -565,7 +564,6 @@ print (x)
 
 x = a - b
 print (x)
-
 x = a**3
 print (x)
  
@@ -1003,7 +1001,7 @@ print("Standard Deviation is: ", np.std(incomes))
 
 #We can segment the income data into 50 buckets, and plot it as a histogram:
 import matplotlib.pyplot as plt
-plt.hist(incomes, 20)
+plt.hist(incomes, 100, color = 'm')
 plt.show()
 
 
@@ -1031,4 +1029,5 @@ print("Mean value is: ", np.mean(incomes))
       
 # Give an example for bincount function
 # num = np.bincount(incomes).argmax()
-
+#incomes = np.array(list(map(lambda x : int(x) if x > 0 else -(x), incomes)))
+#incomes = np.random.normal(27000, 15000, 10000)

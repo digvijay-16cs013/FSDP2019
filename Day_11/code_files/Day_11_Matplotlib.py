@@ -34,7 +34,7 @@ plt.xlim(0, 10)
 plt.ylim(0, 10)
 
 # Or
-plt.axis([0, 10, 0, 10]);
+plt.axis([0, 10, 0, 10])
 
 # Showing the points on the graph
 plt.scatter(x, y)
@@ -76,7 +76,7 @@ explode = (0.1, 0, 0, 0)  # explode 1st slice
 # or
 
 plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=0)
-
+plt.legend(labels)
 
 plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 plt.show()
@@ -284,6 +284,21 @@ colors = np.random.rand(num_vals)
 # Plot the points
 plt.scatter(x, y, s=area, c=colors, alpha=.5)
 plt.show()
+
+
+# random bubbles 
+#import matplotlib.pyplot as plt, numpy as np
+#max_r = 20
+#x = np.random.randint(1, 10, 10)
+#y = np.random.randint(1, 10, 10)
+#r = np.random.rand(10)
+#area = np.pi * (max_r * r) ** 2
+#colors = np.random.rand(10)
+#
+#plt.scatter(x, y, s = area, c = colors, alpha = 0.5)
+#plt.show()
+#plt.colorbar()
+
 
 
 

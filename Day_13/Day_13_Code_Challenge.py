@@ -19,17 +19,6 @@ import Automobile.csv file.
 Using MatPlotLib create a PIE Chart of top 10 car makers according to the number 
 of their cars and explode the largest car maker
 """
-import pandas as pd, matplotlib.pyplot as plt
-
-automobile_data = pd.read_csv('Automobile.csv')
-makers = automobile_data['make'].value_counts()
-
-labels = makers.index[:11]
-data = makers.values[:11]
-explode = (0.2,0,0,0,0,0,0,0,0,0,0)
-plt.pie(data, explode = explode, labels = labels, autopct = '%2.2f%%')
-plt.axis('equal')
-plt.show()
 
 
 """
@@ -53,23 +42,38 @@ Code Challenge
     Plot the results of the above activity to show total births by sex and year  
      
 """
+# to get pandas as pd 
+import pandas as pd
 
-import pandas as pd, os
-
+# creating a main DataFrame with column names, which will be used to concat all the dataframes into one
 main_df = pd.DataFrame(columns = ['Name', 'Sex', 'Number', 'Year'])
 
-list_of_files = os.listdir('.')
-for file in list_of_files[1:132]:
-    data = pd.read_csv(file, header = None)
+# iterating to read all the csv files from year 1880 to 2010
+for i in range(1880, 2011):
+    
+    # since file name follows a specific pattern therefore creating file name using that pattern
+    file_name = 'yob' + str(i) + '.txt'
+    
+    # read one csv file at a time 
+    data = pd.read_csv(file_name, header = None)
+    
+    # setting columns for the individual dataframe
     data.columns = ['Name', 'Sex', 'Number']
-    data['Year'] = file[3:7] 
+    
+    # adding a new columns year to each dataframe which has its year value
+    data['Year'] = i 
+    
+    # sort the dataframe by 'Number' column in descending order for later use
     data = data.sort_values(by = 'Number', ascending = False)
+    
+    # concat each dataframe to the main dataframe
     main_df = pd.concat([data, main_df])
     
-male_names_2010 = main_df['Name'][(main_df['Sex'] == 'M') & (main_df['Year'] == '2010')].head(5)
-female_names_2010 = main_df['Name'][(main_df['Sex'] == 'F') & (main_df['Year'] == '2010')].head()
-main_df.plot()
+# getting top 5 male names from all the data
+male_names_2010 = main_df['Name'][(main_df['Sex'] == 'M') & (main_df['Year'] == 2010)].head()
 
+# getting top 5 female names from all the data
+female_names_2010 = main_df['Name'][(main_df['Sex'] == 'F') & (main_df['Year'] == 2010)].head()
 """
 Code Challenge
   Name: 
@@ -100,13 +104,46 @@ Hint:
     http://1usagov.measuredvoice.com/2011/
     
 """
+# getting Counter class from collections module
+from collections import Counter
 
-import pandas as pd, numpy as np
+# getting some modules(pandas as pd, numpy as np, matplotlib.pyplot as plt)
+import pandas as pd,numpy as np, matplotlib.pyplot as plt
 
+# reading the json file using pandas method read_json, lines = True will avoid Value Error
 bitly_data = pd.read_json('usagov_bitly_data.json', lines = True)
+
+# replaces all the "NaN" to "Missing" values
 bitly_data = bitly_data.replace(np.nan, 'Missing')
+
+# replaces all the '' values "Unknown"
 bitly_data = bitly_data.replace('', 'Unknown')
-bitly_data['tz'][list(bitly_data['tz'].index) != 'Unknown']
+
+# getting all the time zones which are known
+time_zone = bitly_data['tz'][bitly_data['tz'] != 'Unknown']
+
+# getting top ten time zones from all the time zones
+top_ten_tz = time_zone.value_counts().head(10)
+print(top_ten_tz)
+
+# ploting a bar chart time zones
+plt.bar(top_ten_tz.index, top_ten_tz.values, color = 'skyblue')
+
+# avoiding overlapping of time zone names on x axis by setting rotaion to vertical
+plt.xticks(rotation = 'vertical')
+
+# shows the bar chart
+plt.show()
+
+# without pandas top 10 most common time zones
+time_zones = Counter(bitly_data['tz'])
+
+# most_common method returns key-value pairs as list of tuples 
+# then that tuple converted into dictionay
+# then finally we get name of time zones by calling the keys method on dictionary
+top_10_tz = dict(time_zones.most_common(10)).keys()
+print(top_10_tz)
+
 
 
 """
@@ -169,6 +206,13 @@ myplot.yaxis.set_major_formatter(FormatStrFormatter('%d'))
 
 
 """
+import pandas as pd
+
+baltimore = pd.read_csv('Baltimore_City_Employee_Salaries_FY2014.csv')
+
+baltimore['AnnualSalary'] = baltimore['AnnualSalary'].replace('$', baltimore['AnnualSalary'].median())
+
+
 
 """
 Code Challenge
@@ -218,7 +262,4 @@ reviews[reviews["platform"] == "PlayStation 4"]["score"].plot(kind="hist")
 filtered_reviews["score"].hist()
         
 """
-
-
-
 
