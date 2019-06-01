@@ -1,0 +1,15 @@
+Code Challenge 01: (Prostate Dataset)
+
+This is the Prostate Cancer dataset. Perform the train test split before you apply the model.
+(a) Train the unregularized model (linear regressor) and calculate the mean squared error.
+(b) Apply a regularized model now - Ridge regression and lasso as well and check the mean squared error.
+
+
+Code Challenges 02: (House Data)
+This is kings house society data.
+In particular, we will: 
+• Use Linear Regression and see the results
+• Use Lasso (L1) and see the resuls
+• Use Ridge and see the score
+
+
