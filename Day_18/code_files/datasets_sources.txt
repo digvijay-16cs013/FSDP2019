@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed May 29 16:07:07 2019
+
+@author: Administrator
+"""
+
+kdnuggets
+machine learning
+analytics vidhya
+kaggle
+UCI
+Google dataset search 
+Indian govt datasets
