@@ -89,6 +89,7 @@ data = pd.read_csv('kc_house_data.csv')
 # observing the data
 #data.info()
 #data.isnull().any(axis = 0)
+
 data['sqft_above'] = data['sqft_above'].fillna(data['sqft_above'].mean())
 data['date'] = data['date'].apply(lambda d : d.split('T')[0]).astype(np.int64)
 features = data.drop('price', axis = 1)
